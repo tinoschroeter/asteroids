@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: asteroids-backend
+  name: asteroids-backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: asteroids-backend
+  template:
+    metadata:
+      labels:
+        app: asteroids-backend
+    spec:
+      containers:
+      - name: asteroids-backend
+        image: registry.tino.sh/asteroids-backend
+        resources:
+          requests:
+            memory: "50Mi"
+            cpu: "30m"
+          limits:
+            memory: "64Mi"
+            cpu: "100m"
+      nodeSelector:
+        arch: arm64

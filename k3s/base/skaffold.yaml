@@ -1,0 +1,14 @@
+apiVersion: skaffold/v1
+kind: Config
+build:
+  artifacts:
+  - image: registry.tino.sh/asteroids-frontend
+    context: ../../
+    docker:
+      target: frontend
+  - image: registry.tino.sh/asteroids-backend
+    context: ../../
+    docker:
+      target: backend
+deploy:
+  kustomize: {}

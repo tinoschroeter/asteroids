@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  name: asteroids-ingress
+  namespace: asteroids
+spec:
+  rules:
+  - host: asteroids.tino.sh
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: asteroids-frontend-service
+            port: 
+              number: 80
+
+  - host: asteroids.tino.sh
+    http:
+      paths:
+      - pathType: Prefix
+        path: /api
+        backend:
+          service:
+            name: asteroids-backend-service
+            port: 
+              number: 3000
+  tls:
+  - hosts:
+    - asteroids.tino.sh
+    secretName: asteroids-tino-sh-tls

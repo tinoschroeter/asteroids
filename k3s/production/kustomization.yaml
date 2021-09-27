@@ -1,0 +1,5 @@
+namespace: asteroids
+bases:
+  - config.yaml
+  - ../base
+  - ingress.yaml

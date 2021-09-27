@@ -1,0 +1,4 @@
+resources:
+  - asteroids-frontend.yaml
+  - asteroids-backend.yaml
+  - services.yaml
