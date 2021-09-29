@@ -13,9 +13,16 @@ pipeline {
                    '''
             }
         }
-        stage('Test') {
+        stage('Testing infrastructure as code') {
             steps {
-                echo 'Testing..'
+                echo 'Testing IaC..'
+                sh("snyk iac test k3s/*")
+            }
+        }
+        stage('Testing for known vulnerabilities') {
+            steps {
+                echo 'Testing for known vulnerabilities..'
+                sh("snyk test")
             }
         }
         stage('Build Production') {
