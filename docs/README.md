@@ -1,5 +1,7 @@
 # Asteroids
 
+[![Build Status](https://jenkins.tino.sh/buildStatus/icon?job=asteroids%2Fmaster)](https://jenkins.tino.sh/job/asteroids/job/master/)
+
 > Simple visualization of ingress / webserver
 
 ## Tools
