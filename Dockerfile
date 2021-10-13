@@ -5,7 +5,7 @@ COPY frontend .
 
 COPY frontend/nginx.conf /etc/nginx/conf.d/default.conf
 
-FROM node:16.9.1-bullseye-slim AS backend
+FROM node:bullseye-slim AS backend
 RUN apt update && apt dist-upgrade -y
 
 WORKDIR /app
