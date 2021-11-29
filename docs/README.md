@@ -18,4 +18,4 @@
 
 [https://asteroids.tino.sh/](https://asteroids.tino.sh/)
 
-[](https://raw.githubusercontent.com/tinoschroeter/asteroids/master/docs/Screenshot.jpg)
+![asteroids](https://raw.githubusercontent.com/tinoschroeter/asteroids/master/docs/Screenshot.jpg)
