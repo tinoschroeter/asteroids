@@ -6,7 +6,6 @@ COPY frontend .
 COPY frontend/nginx.conf /etc/nginx/conf.d/default.conf
 
 FROM node:gallium-bullseye-slim AS backend
-RUN apt-get update && apt-get dist-upgrade -y
 
 WORKDIR /app
 COPY backend .
