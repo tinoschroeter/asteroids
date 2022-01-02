@@ -13,53 +13,43 @@ class Planet {
     if (load) {
       if (this.status === "2xx" && data.status_2xx) {
         this.targetY = floor(((data.status_2xx * 100) / data.requests) * 8);
-        this.dy = this.targetY - this.y;
-        this.y = constrain(this.y, this.topMax, height - this.size);
-        this.y += this.dy * easing;
-
         this.targetSize = ((data.status_2xx * 100) / data.requests) * 2;
-        this.dsize = this.targetSize - this.size;
-        this.size += this.dsize * easing;
+
+        this.updatePlanet();
       } else if (this.status === "3xx" && data.status_3xx) {
         this.targetY = floor(((data.status_3xx * 100) / data.requests) * 8);
-        this.dy = this.targetY - this.y;
-        this.y = constrain(this.y, this.topMax, height - this.size);
-        this.y += this.dy * easing;
-
         this.targetSize = ((data.status_3xx * 100) / data.requests) * 2;
-        this.dsize = this.targetSize - this.size;
-        this.size += this.dsize * easing;
+
+        this.updatePlanet();
       } else if (this.status === "4xx" && data.status_4xx) {
         this.targetY = floor(((data.status_4xx * 100) / data.requests) * 8);
-        this.dy = this.targetY - this.y;
-        this.y = constrain(this.y, this.topMax, height - this.size);
-        this.y += this.dy * easing;
-
         this.targetSize = ((data.status_4xx * 100) / data.requests) * 2;
-        this.dsize = this.targetSize - this.size;
-        this.size += this.dsize * easing;
+
+        this.updatePlanet();
       } else if (this.status === "5xx") {
         this.targetY = floor(((data.status_5xx * 100) / data.requests) * 8);
-        this.dy = this.targetY - this.y;
-        this.y = constrain(this.y, this.topMax, height - this.size);
-        this.y += this.dy * easing;
-
         this.targetSize = ((data.status_5xx * 100) / data.requests) * 2;
-        this.dsize = this.targetSize - this.size;
-        this.size += this.dsize * easing;
+
+        this.updatePlanet();
       } else if (this.status === "Request" && data.requests) {
         this.yMap = data.requests;
         this.sizeMap = data.requests;
-        this.targetY = floor(map(this.yMap, 60, height - 60, 0, 600));
-        this.dy = this.targetY - this.y;
-        this.y = constrain(this.y, this.topMax, height - this.size);
-        this.y += this.dy * easing;
 
+        this.targetY = floor(map(this.yMap, 60, height - 60, 0, 600));
         this.targetSize = floor(map(this.sizeMap, 0, 1000, 0, 200));
-        this.dsize = this.targetSize - this.size;
-        this.size += this.dsize * easing;
+
+        this.updatePlanet();
       }
     }
+  }
+
+  updatePlanet() {
+    this.dy = this.targetY - this.y;
+    this.y = constrain(this.y, this.topMax, height - this.size);
+    this.y += this.dy * easing;
+
+    this.dsize = this.targetSize - this.size;
+    this.size += this.dsize * easing;
   }
 
   show() {

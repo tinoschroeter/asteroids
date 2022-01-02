@@ -100,7 +100,7 @@ function windowResized() {
 }
 
 function getData() {
-  httpGet("http://localhost:8080/api", "json", false, function (response) {
+  httpGet("https://asteroids.tino.sh/api", "json", false, function (response) {
     data = response;
     load = true;
   });
