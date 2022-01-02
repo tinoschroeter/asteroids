@@ -1,5 +1,8 @@
 import express from "express";
+import cors from "cors";
 const app = express();
+
+app.use(cors())
 
 app.get("/api", (req, res) => {
   const data = {};
@@ -14,7 +17,7 @@ app.get("/api", (req, res) => {
   res.json(data);
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`Server is runngin on Port ${port}`);
 });
