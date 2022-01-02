@@ -29,7 +29,7 @@ spec:
           service:
             name: asteroids-backend-service
             port: 
-              number: 3000
+              number: 8080
   tls:
   - hosts:
     - asteroids.tino.sh
