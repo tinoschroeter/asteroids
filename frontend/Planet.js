@@ -54,7 +54,7 @@ class Planet {
 
   show() {
     stroke(207, 125, 69, 150);
-    if (this.status == "5xx") {
+    if (this.status === "5xx") {
       fill(178, 29, 65);
     } else {
       fill(239, 245, 103, 225);
@@ -66,7 +66,7 @@ class Planet {
     textSize(20);
     fill(239, 245, 103, 225);
 
-    if (this.status == "Request") {
+    if (this.status === "Request") {
       text(
         this.sizeMap + " Req/s",
         this.x - this.size / 2,
