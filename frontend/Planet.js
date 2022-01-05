@@ -65,7 +65,8 @@ class Planet {
     strokeWeight(6);
     textSize(20);
     fill(239, 245, 103, 225);
-    if (status == "Request") {
+
+    if (this.status == "Request") {
       text(
         this.sizeMap + " Req/s",
         this.x - this.size / 2,
