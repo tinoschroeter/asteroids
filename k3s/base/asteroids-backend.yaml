@@ -24,5 +24,3 @@ spec:
           limits:
             memory: "64Mi"
             cpu: "100m"
-      nodeSelector:
-        arch: arm64

@@ -1,3 +1,4 @@
+namespace: asteroids
 resources:
   - asteroids-frontend.yaml
   - asteroids-backend.yaml
