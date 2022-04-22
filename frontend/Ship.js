@@ -1,6 +1,5 @@
 class Ship {
   constructor() {
-
     this.pos = createVector(width / 2, height / 3);
     this.triangleSize = 12;
     this.rotate = 0;
@@ -33,7 +32,8 @@ class Ship {
       for (let i = 0; i < 10000; i++) {
         background(random(150, 205));
       }
-      this.init();
+      this.pos.x = width / 2;
+      this.pos.y = height / 3;
       this.force = createVector(0, 0);
     }
   }
