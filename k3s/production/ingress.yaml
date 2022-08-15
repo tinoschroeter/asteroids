@@ -19,10 +19,6 @@ spec:
             name: asteroids-frontend-service
             port: 
               number: 80
-
-  - host: asteroids.tino.sh
-    http:
-      paths:
       - pathType: Prefix
         path: /api
         backend:
