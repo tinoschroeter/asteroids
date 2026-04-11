@@ -1,4 +1,4 @@
-FROM nginx:1.21.3-alpine AS frontend
+FROM nginx:1.29.8-alpine AS frontend
 
 WORKDIR /usr/share/nginx/html
 COPY frontend .
